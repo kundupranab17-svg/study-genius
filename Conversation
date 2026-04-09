@@ -1,0 +1,55 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the conversation"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "chat",
+        "exam",
+        "notes",
+        "practice",
+        "planner"
+      ],
+      "description": "The mode of this conversation"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Array of messages in the conversation"
+    },
+    "language": {
+      "type": "string",
+      "default": "English",
+      "description": "Preferred language for responses"
+    },
+    "is_pinned": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "mode"
+  ]
+}
